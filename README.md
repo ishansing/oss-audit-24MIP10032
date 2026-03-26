@@ -3,7 +3,7 @@
 ## Student Information
 
 - **Student Name:** Ishan Singh
-- **Roll Number:** [24MIP10032]
+- **Roll Number:** 24MIP10032
 - **Course:** Open Source Software
 - **Chosen Software:** Git (Distributed Version Control)
 
