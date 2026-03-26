@@ -74,6 +74,10 @@ elif command -v rpm &> /dev/null && rpm -q "$PACKAGE" &> /dev/null; then
     # RedHat/Fedora systems
     echo "$PACKAGE is installed."
     rpm -qi "$PACKAGE" | grep -E 'Version|License|Summary'
+elif command -v pacman &> /dev/null && pacman -Qs "$PACKAGE" &> /dev/null; then
+    # Arch Linux systems
+    echo "$PACKAGE is installed."
+    pacman -Qi "$PACKAGE" | grep -E 'Version|Licenses|Description'
 else
     echo "$PACKAGE is NOT installed."
 fi
@@ -138,10 +142,10 @@ done
 
 # --- Software Config Check ---
 echo -e "\n--- Software Config Check ---"
-CONFIG_DIR="/etc/gitconfig" # Checking git config
+CONFIG_DIR="/etc/ssh" # Checking SSH config directory
 
-if [ -f "$CONFIG_DIR" ] || [ -d "$CONFIG_DIR" ]; then
-    echo "Config for Git found at: $CONFIG_DIR"
+if [ -d "$CONFIG_DIR" ]; then
+    echo "Config for SSH found at: $CONFIG_DIR"
     ls -ld "$CONFIG_DIR" | awk '{print "Permissions: " $1, "| Owner: " $3}'
 else
     echo "Configuration directory $CONFIG_DIR was not found."
@@ -260,7 +264,7 @@ echo "----------------------------------------"
 ```
 
 ### Screenshot:
-*(Insert screenshot of Script 5 running here)*
+![Script 5 Running](./public/script5.png)
 
 ### Explanation:
 This creative script generates a personalized open-source manifesto based on user input. It uses the `read` command for **interactive user input**, capturing responses into variables. It demonstrates **string concatenation** and **redirection (`>` and `>>`)** to format a paragraph and save it to a `.txt` file. The script also includes a demonstration of using the `date` command for timestamps and provides a commented example of how to create a shell **alias** for the script.

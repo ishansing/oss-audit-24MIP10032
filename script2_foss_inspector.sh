@@ -16,6 +16,10 @@ elif command -v rpm &> /dev/null && rpm -q "$PACKAGE" &> /dev/null; then
     # RedHat/Fedora systems
     echo "$PACKAGE is installed."
     rpm -qi "$PACKAGE" | grep -E 'Version|License|Summary'
+elif command -v pacman &> /dev/null && pacman -Qs "$PACKAGE" &> /dev/null; then
+    # Arch Linux systems
+    echo "$PACKAGE is installed."
+    pacman -Qi "$PACKAGE" | grep -E 'Version|Licenses|Description'
 else
     echo "$PACKAGE is NOT installed."
 fi

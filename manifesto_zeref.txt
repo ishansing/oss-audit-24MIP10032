@@ -1,0 +1,10 @@
+========================================
+  The Open Source Manifesto of zeref 
+========================================
+Generated on: 26 March 2026
+
+As an advocate for open technology, I rely on Firefox every single day.
+To me, the essence of software 'freedom' can be captured in one word: Ownership.
+Inspired by the community, I pledge that if I were to create Handheld Linux Computer, I would share it freely for everyone to use and improve.
+
+End of Statement.

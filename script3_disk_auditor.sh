@@ -28,10 +28,10 @@ done
 
 # --- Software Config Check ---
 echo -e "\n--- Software Config Check ---"
-CONFIG_DIR="/etc/gitconfig" # Checking git config
+CONFIG_DIR="/etc/ssh" # Checking SSH config directory
 
-if [ -f "$CONFIG_DIR" ] || [ -d "$CONFIG_DIR" ]; then
-    echo "Config for Git found at: $CONFIG_DIR"
+if [ -d "$CONFIG_DIR" ]; then
+    echo "Config for SSH found at: $CONFIG_DIR"
     ls -ld "$CONFIG_DIR" | awk '{print "Permissions: " $1, "| Owner: " $3}'
 else
     echo "Configuration directory $CONFIG_DIR was not found."
